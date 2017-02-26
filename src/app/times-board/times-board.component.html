@@ -1,25 +1,20 @@
-
-
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Linia</th>
-        <th>Kierunek</th>
-        <th>Odjazd (min)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr  *ngFor="let time of times.times">
-        <td>{{time.line}}</td>
-        <td>{{time.direction}}</td>
-        <td>
-          <span *ngIf="time.minutes===0">
-              Mniej niż minute 
-          </span>
-              <span *ngIf="time.minutes!==0">
-          {{time.minutes}}
-              </span>
-          </td>
-      </tr>
-    </tbody>
-  </table>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Linia</th>
+      <th>Kierunek</th>
+      <th>Odjazd (min)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let time of times.times">
+      <td>{{time.line}}</td>
+      <td>{{time.direction}}</td>
+      <td>
+        <span *ngIf="time.minutes===0">  Mniej niż minutę </span>
+        <span *ngIf="time.minutes>0 && time.minutes < 10">       {{time.minutes}}      </span>
+        <span *ngIf="time.minutes >= 10">{{time.departure | date:"HH:mm"}}    </span>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -7,7 +7,7 @@
       <dd>{{direction.bollard.symbol}}</dd>
     </dl>
     <span *ngFor="let direction of direction.directions; let last=last">
-{{direction.lineName}} -> {{direction.direction}}<span *ngIf="!last">,</span>
+{{direction.lineName}} <i class="fa fa-long-arrow-right" aria-hidden="true"></i> {{direction.direction}}<span *ngIf="!last">,</span>
     </span>
   </a>
 </div>

@@ -1,0 +1,13 @@
+<div class="list-group">
+  <a (click)="onBollardChange(direction.bollard.symbol)" href="#" class="list-group-item" *ngFor="let direction of directions">
+    <dl class="dl-horizontal">
+      <dt>Nazwa</dt>
+      <dd>{{direction.bollard.name}}</dd>
+      <dt>Symbol</dt>
+      <dd>{{direction.bollard.symbol}}</dd>
+    </dl>
+    <span *ngFor="let direction of direction.directions; let last=last">
+{{direction.lineName}} -> {{direction.direction}}<span *ngIf="!last">,</span>
+    </span>
+  </a>
+</div>

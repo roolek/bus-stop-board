@@ -1,0 +1,2 @@
+<input [(ngModel)]="asyncSelected" [typeahead]="dataSource" typeaheadOptionsLimit="7" placeholder="Wprowadź nazwę przystanku"
+  (typeaheadOnSelect)="typeaheadOnSelect($event)" typeaheadOptionField="name" class="form-control">
